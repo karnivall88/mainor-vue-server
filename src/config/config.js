@@ -16,5 +16,9 @@ module.exports = {
             host: process.env.HOST || 'localhost',
             storage: './flat.sqlite'
         }
-    }
+    },
+        auth:
+        {
+            secret:'mysecret'
+        }
 }

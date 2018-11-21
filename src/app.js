@@ -11,8 +11,9 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 
-sequelize.sync({force:false}).then(()=>{
+require('./routes')(app);
 
+sequelize.sync({force:false}).then(()=>{
     app.listen(cfg.port);
     console.log(`Server statrted at port: ${cfg.port}`);
 });
